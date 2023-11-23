@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/categoria_produto_input_layout"
+       style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_margin="36dp"
+       android:hint="Categoria">
+
+       <AutoCompleteTextView
+           android:id="@+id/categoria_produto_autocomplete"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:simpleItems="@array/categorias_produto"
+           android:inputType="none"/>
+   </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nome_produto_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoria_produto_input_layout"
+        android:hint="Nome do produto"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:startIconDrawable="@drawable/baseline_shopping_cart_24"
+        app:endIconMode="clear_text"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nome_produto_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/valor_produto_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/unidade_produto_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/nome_produto_input_layout"
+        android:hint="Preço por"
+        app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:startIconDrawable="@drawable/baseline_attach_money_24"
+        app:endIconMode="clear_text"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="2dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/valor_produto_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/unidade_produto_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nome_produto_input_layout"
+        app:layout_constraintStart_toEndOf="@id/valor_produto_input_layout"
+        android:hint="Unidade"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="5dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/unidade_produto_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            app:simpleItems="@array/tipos_unidades"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/peso_embalagem_produto_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gramas_kilogramas_textview"
+        app:layout_constraintTop_toBottomOf="@id/valor_produto_input_layout"
+        android:hint="Peso da embalagem"
+        app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:startIconDrawable="@drawable/baseline_balance_24"
+        app:endIconMode="clear_text"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="2dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/peso_embalagem_produto_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/gramas_kilogramas_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/peso_embalagem_produto_input_layout"
+        app:layout_constraintStart_toEndOf="@id/peso_embalagem_produto_input_layout"
+        app:layout_constraintEnd_toEndOf="@id/unidade_produto_input_layout"
+        app:layout_constraintBottom_toBottomOf="@id/peso_embalagem_produto_input_layout"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="6dp"
+        android:textSize="16sp"
+        tools:text="/gramas"/>
+
+    <TextView
+        android:id="@+id/quantidade_produto_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/peso_embalagem_produto_input_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginStart="82dp"
+        android:textSize="17sp"
+        android:textColor="#2E2E2E"
+        tools:text="Quantidade"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/quantidade_produto_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/quantidade_produto_textview"
+        app:layout_constraintEnd_toEndOf="@id/quantidade_produto_textview"
+        app:layout_constraintTop_toBottomOf="@id/quantidade_produto_textview"
+        android:textAlignment="center"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/quantidade_produto_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"
+            android:text="1"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_adc_quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/quantidade_produto_input_layout"
+        app:layout_constraintTop_toTopOf="@id/quantidade_produto_input_layout"
+        app:layout_constraintBottom_toBottomOf="@id/quantidade_produto_input_layout"
+        android:layout_marginStart="16dp"
+        app:fabCustomSize="38dp"
+        android:src="@drawable/baseline_add_40"
+        android:backgroundTint="@color/purple_200">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_rmv_quantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/quantidade_produto_input_layout"
+        app:layout_constraintTop_toTopOf="@id/quantidade_produto_input_layout"
+        app:layout_constraintBottom_toBottomOf="@id/quantidade_produto_input_layout"
+        android:layout_marginEnd="16dp"
+        app:fabCustomSize="38dp"
+        android:src="@drawable/baseline_remove_24"
+        android:backgroundTint="@color/purple_200">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <Button
+        android:id="@+id/botao_salvar_novo_produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantidade_produto_input_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="36dp"
+        app:layout_constraintVertical_bias="1"
+        android:backgroundTint="@color/purple_500"
+        android:text="Salvar"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

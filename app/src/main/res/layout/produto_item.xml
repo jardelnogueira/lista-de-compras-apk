@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/produto_item_cardview_checkable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    android:checkable="true"
+    android:clickable="true"
+    android:longClickable="false"
+    android:focusable="false"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="#CDCDCD"
+    app:checkedIcon="@drawable/baseline_check_circle_40"
+    app:checkedIconTint="#23C000">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/produto_item_cardview_filha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/produto_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nome_produto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/pacote_text"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Nome do Produto"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/preco_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="4dp"
+                android:text="Preço:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/nome_produto"
+                app:layout_constraintTop_toBottomOf="@id/nome_produto" />
+
+            <TextView
+                android:id="@+id/valor_produto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toEndOf="@id/preco_text"
+                app:layout_constraintTop_toTopOf="@id/preco_text"
+                app:layout_constraintBottom_toBottomOf="@id/preco_text"
+                tools:text="R$ 19,99/" />
+
+            <TextView
+                android:id="@+id/unidade_produto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/valor_produto"
+                app:layout_constraintTop_toTopOf="@id/valor_produto"
+                android:layout_marginStart="2dp"
+                tools:text="kg" />
+
+            <TextView
+                android:id="@+id/pacote_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Pacote"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/quantidade_text"
+                app:layout_constraintEnd_toStartOf="@id/quantidade_text"
+                app:layout_constraintStart_toEndOf="@id/nome_produto"
+                app:layout_constraintTop_toTopOf="@id/quantidade_text" />
+
+            <TextView
+                android:id="@+id/tamanho_pacote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/valor_produto"
+                app:layout_constraintEnd_toEndOf="@id/pacote_text"
+                app:layout_constraintStart_toStartOf="@id/pacote_text"
+                app:layout_constraintTop_toTopOf="@id/valor_produto"
+                tools:text="500g"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/quantidade_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:text="Qtde"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/nome_produto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/nome_produto"/>
+
+            <TextView
+                android:id="@+id/quantidade_produto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/quantidade_text"
+                app:layout_constraintStart_toStartOf="@id/quantidade_text"
+                app:layout_constraintTop_toBottomOf="@id/quantidade_text"
+                tools:text="2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</com.google.android.material.card.MaterialCardView>

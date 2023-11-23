@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categorias_produto">
+        <item>Alimentos</item>
+        <item>Bebidas</item>
+        <item>Congelados</item>
+        <item>Feira</item>
+        <item>Frios</item>
+        <item>Higiene</item>
+        <item>Limpeza</item>
+    </string-array>
+    <string-array name="tipos_unidades">
+        <item>grama</item>
+        <item>kg</item>
+        <item>pacote</item>
+        <item>unidade</item>
+        <item>litro</item>
+    </string-array>
+</resources>

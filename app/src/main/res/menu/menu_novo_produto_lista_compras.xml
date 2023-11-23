@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_botao_selecionar_todos"
+        android:icon="@drawable/baseline_white_check_circle_40"
+        android:title="Selecionar todos"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_botao_novo_produto"
+        android:icon="@drawable/baseline_add_24"
+        android:title="Novo"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_botao_remover_produto"
+        android:icon="@drawable/baseline_delete_forever_24"
+        android:title="Excluir"
+        app:showAsAction="always"/>
+</menu>
